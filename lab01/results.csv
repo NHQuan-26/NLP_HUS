@@ -1,0 +1,9 @@
+query_id,query_text,category,total_relevant_in_corpus,precision@5,recall@5,mrr,retrieved_top5_ids,relevant_hits_in_top5
+Q1,medical image classification,Medical Imaging,4,0.0,0.0,0.0,"[18971, 8527, 17794, 19908, 15682]",0
+Q2,transformer language model,Deep Learning / NLP,0,0.0,0.0,0.0,"[27936, 25428, 24482, 701, 4075]",0
+Q3,deep learning healthcare,Healthcare AI,10,0.0,0.0,0.0,"[7564, 6123, 11979, 9252, 11119]",0
+Q4,natural language processing,NLP,17,0.0,0.0,0.0,"[25428, 8705, 5699, 24482, 701]",0
+Q5,bbq cooking meat smoker,Culinary / BBQ,1,0.2,1.0,0.5,"[18356, 0, 26217, 29872, 26462]",1
+Q6,macbook restore disk utility,Tech Support,6,0.2,0.1667,0.5,"[20036, 1, 6475, 15786, 8660]",1
+Q7,heart attack prevention,Cardiology (Lexical match),6,0.0,0.0,0.0,"[799, 8987, 23448, 7268, 1422]",0
+Q8,myocardial infarction therapy,Cardiology (Clinical synonym),6,0.4,0.3333,0.5,"[6173, 5052, 26337, 8343, 9884]",2
