@@ -1,0 +1,47 @@
+# LAB 02 EXPERIMENTAL RESULTS
+# Student: Nguyen Hong Quan - 23001921
+
+=== EXPERIMENT 1: CORPUS STATISTICS ===
+Metric,Value
+Documents,15000.0
+Sentences,327317.0
+Tokens,5560592.0
+Vocabulary Size (Unique Unigrams),130136.0
+Unique Bigrams,1632714.0
+Unique Trigrams,3478874.0
+Unigram Singletons (Count=1),61395.0
+Bigram Singletons (Count=1),1187009.0
+Trigram Singletons (Count=1),3046773.0
+Unigram Singleton Ratio (%),47.18
+Bigram Singleton Ratio (%),72.7
+Trigram Singleton Ratio (%),87.58
+
+=== EXPERIMENT 2: MLE VS LAPLACE SMOOTHING ===
+Experiment,Model,N,Smoothing,Train PPL,Valid PPL,Test PPL
+Exp2_MLE_vs_Smoothing,Bigram MLE,2,mle,174.87,inf,inf
+Exp2_MLE_vs_Smoothing,Bigram Laplace,2,laplace,3391.81,4020.89,3994.95
+Exp2_MLE_vs_Smoothing,Trigram MLE,3,mle,inf,inf,inf
+Exp2_MLE_vs_Smoothing,Trigram Laplace,3,laplace,16260.47,25354.57,25297.26
+
+=== EXPERIMENT 3: N-GRAM PERPLEXITY EVALUATION ===
+Experiment,Model,N,Smoothing,Train PPL,Valid PPL,Test PPL
+Exp3_Ngram_Perplexity,Unigram Laplace,1,laplace,1749.23,1632.36,1631.44
+Exp3_Ngram_Perplexity,Bigram Laplace,2,laplace,3391.81,4020.89,3994.95
+Exp3_Ngram_Perplexity,Trigram Laplace,3,laplace,16260.47,25354.57,25297.26
+
+=== APPLICATION: NEXT-WORD PREDICTION (TOP 5 CONTEXTS) ===
+Context,Top Prediction,Top Probability,Top 3 Predictions,Actual Next Word
+the cat,queen,0.00007,queen (0.0001); came (0.0000); lover (0.0000),eats
+natural language,processing,0.00005,processing (0.0000); apps (0.0000); toolkit (0.0000),processing
+machine learning,and,0.00010,and (0.0001); based (0.0001); to (0.0001),models
+artificial intelligence,ai,0.00005,ai (0.0000); company (0.0000); and (0.0000),and
+deep neural,network,0.00005,network (0.0000); 0 (0.0000); 00 (0.0000),network
+
+=== APPLICATION: SENTENCE RANKING CANDIDATES ===
+Context,Rank,Candidate Continuation,Log Probability Score,Perplexity
+machine learning,1,is useful for nlp,-40.7619,26648.17
+machine learning,2,banana computer quickly,-33.0693,61274.00
+machine learning,3,studies language models,-33.0693,61274.33
+natural language,1,processing is a field of artificial intelligence,-70.4987,23652.82
+natural language,2,table jump green potato,-44.0916,61261.00
+natural language,3,understanding has made huge progress,-55.1166,61287.38
