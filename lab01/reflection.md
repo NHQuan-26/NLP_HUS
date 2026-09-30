@@ -1,7 +1,7 @@
 # TỔNG KẾT VÀ TỰ ĐÁNH GIÁ (REFLECTION & LEARNING CHECK)
 
 Môn học: Xử lý ngôn ngữ tự nhiên và ứng dụng  
-Sinh viên: Chester  
+Sinh viên: Nguyễn Hồng Quân - 23001921
 
 ---
 
@@ -22,7 +22,8 @@ Thực nghiệm so sánh tiền xử lý (Part F - Preprocessing Ablation) cho t
 **5. Nếu được xây lại search engine, em sẽ thay đổi điều gì?**  
 Em sẽ không chỉ dùng mỗi TF-IDF. Em sẽ kết hợp TF-IDF với mô hình Dense Embedding (như Sentence-BERT) để vừa tìm đúng từ khóa chính xác, vừa hiểu được ngữ nghĩa của câu khi người dùng dùng từ đồng nghĩa.
 
-**6. Khai báo sử dụng AI:**  
+**6. Khai báo sử dụng AI:**
+
 - AI hỗ trợ em viết khung code các phép tính ma trận trong `implementation.py` và giải thích công thức làm mịn IDF của thư viện scikit-learn.
 - Toàn bộ các bài tính tay trong `calculations.md`, phần đưa ra dự đoán ban đầu, chọn ví dụ phân tích lỗi và trả lời các câu hỏi tự kiểm tra đều do em tự làm và kiểm chứng.
 
@@ -34,10 +35,10 @@ Em sẽ không chỉ dùng mỗi TF-IDF. Em sẽ kết hợp TF-IDF với mô h�
 Vì toàn bộ kho ngữ liệu có tới hàng trăm nghìn từ khác nhau, nhưng mỗi văn bản thực tế chỉ chứa khoảng 100 đến 200 từ. Khi biểu diễn văn bản thành vector có chiều dài bằng toàn bộ từ vựng, những từ không có mặt đều nhận giá trị 0, khiến cho hơn 99% các giá trị trong vector là số 0.
 
 **Câu 2: Tại sao một term xuất hiện trong hầu hết documents có IDF thấp?**  
-Theo công thức IDF = ln(N / df), nếu từ xuất hiện ở hầu hết văn bản thì df xấp xỉ N, khi đó tỷ số N / df xấp xỉ 1 và ln(1) = 0. Về mặt ý nghĩa, từ nào câu nào cũng có (như *the, is, and*) thì không mang giá trị để phân biệt nội dung các câu với nhau.
+Theo công thức IDF = ln(N / df), nếu từ xuất hiện ở hầu hết văn bản thì df xấp xỉ N, khi đó tỷ số N / df xấp xỉ 1 và ln(1) = 0. Về mặt ý nghĩa, từ nào câu nào cũng có (như _the, is, and_) thì không mang giá trị để phân biệt nội dung các câu với nhau.
 
 **Câu 3: Tại sao một term có IDF cao chưa chắc có TF-IDF cao trong một document?**  
-Vì công thức TF-IDF = TF * IDF. Một từ dù có IDF rất cao (từ rất hiếm), nhưng nếu nó không xuất hiện trong văn bản đang xét thì TF của nó bằng 0, dẫn đến TF-IDF cũng bằng 0.
+Vì công thức TF-IDF = TF \* IDF. Một từ dù có IDF rất cao (từ rất hiếm), nhưng nếu nó không xuất hiện trong văn bản đang xét thì TF của nó bằng 0, dẫn đến TF-IDF cũng bằng 0.
 
 **Câu 4: Tại sao cosine similarity phù hợp với document vectors?**  
 Vì cosine similarity đo góc giữa 2 vector chứ không bị ảnh hưởng bởi độ dài của văn bản. Nếu một bài viết dài nói cùng chủ đề với một bài viết ngắn, phép đo này vẫn nhận diện được chúng giống nhau, không bị lệch điểm do bài viết dài có nhiều từ lặp lại hơn.
