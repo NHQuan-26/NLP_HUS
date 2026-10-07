@@ -1,0 +1,27 @@
+# LAB 03 EXPERIMENTAL RESULTS
+# Student: Nguyen Hong Quan - 23001921
+
+=== EXPERIMENT 1: CO-OCCURRENCE MATRIX STATISTICS ===
+Window Size,Vocabulary Size,Matrix Shape,Non-zero Entries (nnz),Sparsity (%),Sim(doctor-physician)
+1,29381,29381x29381,2099883,99.7567,0.8355
+2,29381,29381x29381,4078885,99.5275,0.8487
+5,29381,29381x29381,8885616,98.9707,0.8940
+
+=== EXPERIMENT 2: WORD2VEC TOP SIMILARITIES ===
+Target Word,Rank 1,Rank 2,Rank 3,Rank 4,Rank 5
+doctor,physician (0.7949),spouse (0.7228),child (0.7066),novak (0.6359),husband (0.6327)
+hospital,clinic (0.7094),indiana (0.6886),cincinnati (0.6782),yale (0.6694),alabama (0.6691)
+computer,desktop (0.7840),browser (0.7522),device (0.7431),laptop (0.7316),server (0.6991)
+football,baseball (0.8323),basketball (0.8104),soccer (0.7679),championship (0.7237),club (0.7149)
+
+=== EXPERIMENT 3: CONTEXT WINDOW EFFECT ===
+Word Pair,Window 2,Window 5,Window 10
+doctor - physician,0.7542,0.6950,0.7472
+doctor - hospital,0.4390,0.4876,0.5377
+cat - dog,0.5619,0.6868,0.6441
+
+=== EXPERIMENT 4: EMBEDDING DIMENSION EFFECT ===
+Dimension,Training Time (s),Vector Matrix Size,Sim(doctor-physician),Analogy(king-man+woman)
+50,136.70,1469050,0.7983,queen
+100,133.61,2938100,0.7595,queen
+300,196.40,8814300,0.5575,queen
